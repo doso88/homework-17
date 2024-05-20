@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <p>exercise 1</p>
+    <button id="btn" onclick="removeButton()">Dissapearing Button</button>
+
+
+
+    <p>exersice 3</p>
+    <input type="text" id="input" placeholder="fill info">
+    <button id="input_button">Input Button</button>
+    <p id="input_info"></p>
+
+
+    <p id="amount_sum"></p>
+
+    <script>
+        /*1. html ფაილში (ჯავასკრიპტით არა) შევქმნათ ღილაკი, ამ ღილაკის კლიკზე წაიშალოს თვითონ ეს ღილაკი ანუ რომ დავკლიკავ ღილაკზე გაქრეს  გამოიყენეთ ეს მეთოდი remove() */
+
+        const removeButton = (removeButton) => {
+            const element = document.getElementById("btn");
+            element.remove();
+        };
+
+
+        /*2. ჯავასკრიპტით შევქმნათ img tag რომელსაც src ად მივანიჭებთ ამ: https://www.simplilearn.com/ice9/free_resources_article_thumb/Become_a_Front_End_Developer.jpg სურათის ლინკს და ეს შექმნილი img ჩავსვათ body ში (ისე როგორც ლექციაზე გავაკეთეთ).
+გამოიყენეთ ეს მეთოდი setAttribute()*/
+
+        const img = document.createElement("img");
+        img.setAttribute("Src", "https://www.simplilearn.com/ice9/free_resources_article_thumb/Become_a_Front_End_Developer.jpg");
+        img.setAttribute("alt", "picture" );
+        img.setAttribute("id", "img");
+        document.body.appendChild(img);
+
+
+        /* 3. დაამატეთ ერთი ინფუთი და ღილაკი , რა ინფორმაციასაც  შეიყვანთ ინფუთის ველში, ღილაკზე დაჭერისას ქვემოთ p ტეგში  გამოიტანეთ ინფუთის მნიშვნელობა .*/
+        const input = getElementById("input");
+        const p = getElementById("input_info");
+
+        input.addEventListener ("change", (update) => {
+            p.textContent = update.target.value;
+        })
+
+
+        /*4*/
+        const productData = [
+            {product_id: 1, amount: 200}, 
+            { product_id: 2, amount: 300},
+            { product_id:3, amount: 500 }];
+
+            let sum = 0;
+            for (let i = 0; i < productData.length; i++) {
+                const element = productData[i].amount;
+                sum = sum + element
+            }
+
+            const p_sum = getElementById ("amount_sum")
+            p_sum.textContent = sum;
+            document.body.appendChild(p_sum);
+    </script>
+    
+</body>
+</html>
