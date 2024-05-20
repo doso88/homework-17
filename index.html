@@ -13,8 +13,8 @@
 
 
     <p>exersice 3</p>
-    <input type="text" id="input" placeholder="fill info">
-    <button id="input_button">Input Button</button>
+    <input type="text" id="text" placeholder="fill info">
+    <button id="button">add text</button>
     <p id="input_info"></p>
 
 
@@ -40,13 +40,14 @@
 
 
         /* 3. დაამატეთ ერთი ინფუთი და ღილაკი , რა ინფორმაციასაც  შეიყვანთ ინფუთის ველში, ღილაკზე დაჭერისას ქვემოთ p ტეგში  გამოიტანეთ ინფუთის მნიშვნელობა .*/
-        const input = getElementById("input");
-        const p = getElementById("input_info");
-
-        input.addEventListener ("change", (update) => {
-            p.textContent = update.target.value;
-        })
-
+        const input = document.getElementById("text");
+        const button = document.getElementById("button");
+        const value = document.getElementById("input_info")
+        
+        const handleClick = () => {
+            value.textContent = input.value
+        }
+        button.addEventListener("click", handleClick)
 
         /*4*/
         const productData = [
@@ -60,7 +61,7 @@
                 sum = sum + element
             }
 
-            const p_sum = getElementById ("amount_sum")
+            const p_sum = document.getElementById ("amount_sum")
             p_sum.textContent = sum;
             document.body.appendChild(p_sum);
     </script>
